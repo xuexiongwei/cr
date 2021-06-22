@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.copyresult.dao.first.FirstPk10Mapper">
+    <resultMap id="BaseResultMap" type="com.example.copyresult.entity.Pk10">
+        <!--@mbg.generated-->
+        <!--@Table pk10-->
+        <id column="period" jdbcType="VARCHAR" property="period"/>
+        <result column="data" jdbcType="VARCHAR" property="data"/>
+        <result column="award_num" jdbcType="VARCHAR" property="awardNum"/>
+        <result column="open_date" jdbcType="VARCHAR" property="openDate"/>
+        <result column="buy_num" jdbcType="VARCHAR" property="buyNum"/>
+        <result column="balance" jdbcType="VARCHAR" property="balance"/>
+        <result column="win" jdbcType="VARCHAR" property="win"/>
+        <result column="win_amount" jdbcType="VARCHAR" property="winAmount"/>
+        <result column="betting_amount" jdbcType="VARCHAR" property="bettingAmount"/>
+        <result column="buy_type" jdbcType="VARCHAR" property="buyType"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        period, `data`, award_num, open_date, buy_num, balance, win, win_amount, betting_amount,
+        buy_type
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from pk10
+        where period = #{period,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        <!--@mbg.generated-->
+        delete from pk10
+        where period = #{period,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" parameterType="com.example.copyresult.entity.Pk10">
+        <!--@mbg.generated-->
+        insert into pk10 (period, `data`, award_num,
+        open_date, buy_num, balance,
+        win, win_amount, betting_amount,
+        buy_type)
+        values (#{period,jdbcType=VARCHAR}, #{data,jdbcType=VARCHAR}, #{awardNum,jdbcType=VARCHAR},
+        #{openDate,jdbcType=VARCHAR}, #{buyNum,jdbcType=VARCHAR}, #{balance,jdbcType=VARCHAR},
+        #{win,jdbcType=VARCHAR}, #{winAmount,jdbcType=VARCHAR}, #{bettingAmount,jdbcType=VARCHAR},
+        #{buyType,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.example.copyresult.entity.Pk10">
+        <!--@mbg.generated-->
+        insert into pk10
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="period != null">
+                period,
+            </if>
+            <if test="data != null">
+                `data`,
+            </if>
+            <if test="awardNum != null">
+                award_num,
+            </if>
+            <if test="openDate != null">
+                open_date,
+            </if>
+            <if test="buyNum != null">
+                buy_num,
+            </if>
+            <if test="balance != null">
+                balance,
+            </if>
+            <if test="win != null">
+                win,
+            </if>
+            <if test="winAmount != null">
+                win_amount,
+            </if>
+            <if test="bettingAmount != null">
+                betting_amount,
+            </if>
+            <if test="buyType != null">
+                buy_type,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="period != null">
+                #{period,jdbcType=VARCHAR},
+            </if>
+            <if test="data != null">
+                #{data,jdbcType=VARCHAR},
+            </if>
+            <if test="awardNum != null">
+                #{awardNum,jdbcType=VARCHAR},
+            </if>
+            <if test="openDate != null">
+                #{openDate,jdbcType=VARCHAR},
+            </if>
+            <if test="buyNum != null">
+                #{buyNum,jdbcType=VARCHAR},
+            </if>
+            <if test="balance != null">
+                #{balance,jdbcType=VARCHAR},
+            </if>
+            <if test="win != null">
+                #{win,jdbcType=VARCHAR},
+            </if>
+            <if test="winAmount != null">
+                #{winAmount,jdbcType=VARCHAR},
+            </if>
+            <if test="bettingAmount != null">
+                #{bettingAmount,jdbcType=VARCHAR},
+            </if>
+            <if test="buyType != null">
+                #{buyType,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.example.copyresult.entity.Pk10">
+        <!--@mbg.generated-->
+        update pk10
+        <set>
+            <if test="data != null">
+                `data` = #{data,jdbcType=VARCHAR},
+            </if>
+            <if test="awardNum != null">
+                award_num = #{awardNum,jdbcType=VARCHAR},
+            </if>
+            <if test="openDate != null">
+                open_date = #{openDate,jdbcType=VARCHAR},
+            </if>
+            <if test="buyNum != null">
+                buy_num = #{buyNum,jdbcType=VARCHAR},
+            </if>
+            <if test="balance != null">
+                balance = #{balance,jdbcType=VARCHAR},
+            </if>
+            <if test="win != null">
+                win = #{win,jdbcType=VARCHAR},
+            </if>
+            <if test="winAmount != null">
+                win_amount = #{winAmount,jdbcType=VARCHAR},
+            </if>
+            <if test="bettingAmount != null">
+                betting_amount = #{bettingAmount,jdbcType=VARCHAR},
+            </if>
+            <if test="buyType != null">
+                buy_type = #{buyType,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where period = #{period,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.example.copyresult.entity.Pk10">
+        <!--@mbg.generated-->
+        update pk10
+        set `data` = #{data,jdbcType=VARCHAR},
+        award_num = #{awardNum,jdbcType=VARCHAR},
+        open_date = #{openDate,jdbcType=VARCHAR},
+        buy_num = #{buyNum,jdbcType=VARCHAR},
+        balance = #{balance,jdbcType=VARCHAR},
+        win = #{win,jdbcType=VARCHAR},
+        win_amount = #{winAmount,jdbcType=VARCHAR},
+        betting_amount = #{bettingAmount,jdbcType=VARCHAR},
+        buy_type = #{buyType,jdbcType=VARCHAR}
+        where period = #{period,jdbcType=VARCHAR}
+    </update>
+</mapper>

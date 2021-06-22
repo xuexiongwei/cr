@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.copyresult.dao.first.Pk10dataMapper">
+  <resultMap id="BaseResultMap" type="com.example.copyresult.entity.Pk10data">
+    <!--@mbg.generated-->
+    <!--@Table pk10data-->
+    <id column="period" jdbcType="VARCHAR" property="period" />
+    <result column="data" jdbcType="VARCHAR" property="data" />
+    <result column="award_num" jdbcType="VARCHAR" property="awardNum" />
+    <result column="open_date" jdbcType="VARCHAR" property="openDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    period, `data`, award_num, open_date
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from pk10data
+    where period = #{period,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from pk10data
+    where period = #{period,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.copyresult.entity.Pk10data">
+    <!--@mbg.generated-->
+    insert into pk10data (period, `data`, award_num, 
+      open_date)
+    values (#{period,jdbcType=VARCHAR}, #{data,jdbcType=VARCHAR}, #{awardNum,jdbcType=VARCHAR}, 
+      #{openDate,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.copyresult.entity.Pk10data">
+    <!--@mbg.generated-->
+    insert into pk10data
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="period != null">
+        period,
+      </if>
+      <if test="data != null">
+        `data`,
+      </if>
+      <if test="awardNum != null">
+        award_num,
+      </if>
+      <if test="openDate != null">
+        open_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="period != null">
+        #{period,jdbcType=VARCHAR},
+      </if>
+      <if test="data != null">
+        #{data,jdbcType=VARCHAR},
+      </if>
+      <if test="awardNum != null">
+        #{awardNum,jdbcType=VARCHAR},
+      </if>
+      <if test="openDate != null">
+        #{openDate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.copyresult.entity.Pk10data">
+    <!--@mbg.generated-->
+    update pk10data
+    <set>
+      <if test="data != null">
+        `data` = #{data,jdbcType=VARCHAR},
+      </if>
+      <if test="awardNum != null">
+        award_num = #{awardNum,jdbcType=VARCHAR},
+      </if>
+      <if test="openDate != null">
+        open_date = #{openDate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where period = #{period,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.copyresult.entity.Pk10data">
+    <!--@mbg.generated-->
+    update pk10data
+    set `data` = #{data,jdbcType=VARCHAR},
+      award_num = #{awardNum,jdbcType=VARCHAR},
+      open_date = #{openDate,jdbcType=VARCHAR}
+    where period = #{period,jdbcType=VARCHAR}
+  </update>
+</mapper>

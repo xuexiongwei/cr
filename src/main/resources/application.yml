@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    #本地数据库
+    first:
+      url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT&useSSL=false
+      username: root
+      password: Rris@1234
+      driverClassName: com.mysql.cj.jdbc.Driver
+    #远程数据库
+    second:
+      url: jdbc:mysql://42.192.99.194:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT&useSSL=false
+      username: root
+      password: rris@1234
+      driverClassName: com.mysql.cj.jdbc.Driver
+server:
+  port: 2020
